@@ -1,0 +1,15 @@
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\connectionmanager\ConnectionFactory.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\entities\Owner.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\controller\AnimalHavenController.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\model\dao\AnimalDao.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\util\ValidityChecker.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\bl\AnimalDBBLFactory.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\model\dao\OwnerDaoMySQL.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\model\dao\OwnerDao.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\bl\AnimalDBBLMySQL.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\bl\AnimalDBBL.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\model\dao\AnimalDaoMySQL.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\entities\OwnerFactory.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\entities\Animal.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\entities\AnimalFactory.java
+C:\Users\Utente\work\AnimalSpring\src\main\java\com\hrmgroup\animalspring\controller\Beans.java

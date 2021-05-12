@@ -1,0 +1,15 @@
+com\hrmgroup\animalspring\model\dao\OwnerDaoMySQL.class
+com\hrmgroup\util\ValidityChecker.class
+com\hrmgroup\animalspring\connectionmanager\ConnectionFactory.class
+com\hrmgroup\animalspring\controller\AnimalHavenController.class
+com\hrmgroup\animalspring\bl\AnimalDBBL.class
+com\hrmgroup\animalspring\model\dao\AnimalDao.class
+com\hrmgroup\animalspring\model\dao\OwnerDao.class
+com\hrmgroup\animalspring\entities\Animal.class
+com\hrmgroup\animalspring\entities\OwnerFactory.class
+com\hrmgroup\animalspring\bl\AnimalDBBLFactory.class
+com\hrmgroup\animalspring\controller\Beans.class
+com\hrmgroup\animalspring\model\dao\AnimalDaoMySQL.class
+com\hrmgroup\animalspring\bl\AnimalDBBLMySQL.class
+com\hrmgroup\animalspring\entities\Owner.class
+com\hrmgroup\animalspring\entities\AnimalFactory.class
