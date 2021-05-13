@@ -21,6 +21,8 @@ public interface AnimalDBBL
 	List<Owner> prettyList() throws SQLException ;
 	List<Animal> loadAnimalByOwner(Owner owner) throws SQLException ;
 	
+	List<String> getAllAnimalTypes() throws SQLException;
+	
 	
 	
 	

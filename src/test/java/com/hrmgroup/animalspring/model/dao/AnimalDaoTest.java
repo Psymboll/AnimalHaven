@@ -36,4 +36,18 @@ class AnimalDaoTest {
 		}
 			
 	}
+	
+	
+	@Test
+	void testLoadAnimalTypes() throws SQLException 
+	{
+		List<String> res = dao.loadAllAnimalTypes();
+		System.out.println(res);
+		if(res.size()!=6)
+		{
+			System.out.println(res);
+			fail("Not yet implemented");
+		}
+			
+	}
 }

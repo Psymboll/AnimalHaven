@@ -7,7 +7,9 @@ import org.springframework.web.context.annotation.SessionScope;
 import com.hrmgroup.animalspring.bl.AnimalDBBL;
 import com.hrmgroup.animalspring.bl.AnimalDBBLFactory;
 import com.hrmgroup.animalspring.entities.User;
+import com.hrmgroup.animalspring.entities.AnimalValidator;
 import com.hrmgroup.animalspring.entities.Owner;
+import com.hrmgroup.animalspring.entities.OwnerValidator;
 
 
 @Component
@@ -27,5 +29,16 @@ public class Beans
 		return new User();
 	}
 	
+	@Bean
+	public AnimalValidator getAnimalValidator()
+	{
+		return new AnimalValidator();
+	}
 	
+	
+	@Bean
+	public OwnerValidator getOwnerValidator()
+	{
+		return new OwnerValidator();
+	}
 }

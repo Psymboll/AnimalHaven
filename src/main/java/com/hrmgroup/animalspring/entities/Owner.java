@@ -3,13 +3,22 @@ package com.hrmgroup.animalspring.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Owner 
 {
 	
 	public static Owner GUEST = new Owner ( -1,"GUEST",null,null);
 	private int id;
+	@Size (min=2 , max=30)
 	private String username;
+	@NotEmpty @Email
 	private String email;
+	@NotEmpty
 	private String password;
 	
 	private List<Animal> animals = new ArrayList<>();

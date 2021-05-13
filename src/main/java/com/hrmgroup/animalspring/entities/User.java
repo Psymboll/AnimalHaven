@@ -4,12 +4,11 @@ public class User
 {
 	private Owner loggeduser;
 	
-	private String test;
 	
 	public User()
 	{
 		loggeduser = Owner.GUEST;
-		test = "user is present";
+		
 	}
 
 	
@@ -28,18 +27,7 @@ public class User
 
 
 
-	public String getTest() 
-	{
-		return test;
-	}
-
-
-
-	public void setTest(String test) 
-	{
-		this.test = test;
-	}
-
+	
 
 
 	public boolean isGuest()

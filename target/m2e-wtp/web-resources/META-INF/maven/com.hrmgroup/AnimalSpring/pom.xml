@@ -59,6 +59,19 @@
 		<artifactId>mysql-connector-java</artifactId>
 		<version>5.1.44</version>
 	</dependency>
+	<!--  hibernate validator -->
+	<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>6.1.0.Final</version>
+</dependency>
+<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
 		
 		
 	</dependencies>

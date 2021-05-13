@@ -203,6 +203,26 @@ public class AnimalDaoMySQL implements AnimalDao
 
 
 
+	@Override
+	public List<String> loadAllAnimalTypes() throws SQLException 
+	{
+		String preparedStat = "select * from animaltypes";
+		animalPrepareStat = animalConn.prepareStatement(preparedStat);
+		
+		ResultSet rs = animalPrepareStat.executeQuery();
+		List<String> animalTypes = new ArrayList<>();
+		while(rs.next())
+		{
+			String animalType = rs.getString("animaltype");
+			animalTypes.add(animalType);
+		}
+		rs.close();
+		return animalTypes;
+	}
+
+
+
+
 	
 	
 	

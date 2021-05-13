@@ -2,42 +2,49 @@
     pageEncoding="ISO-8859-1"
     import="com.hrmgroup.animalspring.entities.*,java.util.List,java.util.Set"%>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	
 <jsp:include page="header.jsp"/>
 
 
 
 <div class="login container">
 	<div class="row">
-	<div class=col></div>
-		<div class=col>
-		<form action="login" method = "post" >
-			<div class = "col-2" style="padding-top:5px">Email</div>
-			<div class="col-2">
-			<input
-			class="loginform"
-			id="emailinput"
-			name = "email"
-			type = "email"/>
-			</div>
-			<div class = "col-2" style="padding-top:5px">Password </div>
-			<div class="col-2">
-			<input
-			class="loginform"
-			id="passwordinput"
-			name = "password"
-			type = "password"/>
-			</div>
-			
-			<div class="col-2" style ="padding-top: 5px">
-				<button id="loginbutton" type="submit" class="btn btn-warning " disabled value="Login" > Login </button>
-			</div>
-			
-			
-			
-		</form>
+	<div class=col-3></div>
+		<div class=col-6>
+			<form:form action="login" method = "post" modelAttribute="logginguser" >
+				<div class="row g-3 align-items-center" style = "padding-top:25px">
+					<div class=col-6>
+						<label for="emailinput" class="col-form-label">Email</label>
+					</div>
+					<div class="col-6">	
+						<form:input class="loginform form-control" id="emailinput" path="email" type = "email"/>
+					</div>
+				
+					
+				
+				</div>	
+				<div class="row g-3 align-items-center">
+					<div class=col-6>
+						<label for="passwordinput" class="col-form-label">Password</label>
+					</div>
+					
+					<div class="col-6">
+						<form:input class="loginform form-control" id="passwordinput" path = "password" type = "password"/>
+					</div>
+				</div>
+				<div class="col-6" style ="padding-top: 5px">
+						<button id="loginbutton" type="submit" class="btn btn-warning " disabled value="Login" > Login </button>
+				</div>
+				
+				<form:errors  class="form-text" path="" style="color:DarkRed"/>
+			</form:form>
 		</div>
-		<div class=col></div>
+			
+				
+			
+		
+		<div class=col-3></div>
 	</div>
 </div>
 <script>

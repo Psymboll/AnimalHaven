@@ -17,13 +17,18 @@
 <context:component-scan base-package="com.hrmgroup.animalspring.controller">
 </context:component-scan>    
     
-
+<!--  questo è per mappare le view nella cartella e con l'estensione indicata -->
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">    
 	
 	<property name="prefix" value="/WEB-INF/jsp/"></property>    
 	
 	<property name="suffix" value=".jsp"></property>    
 </bean> 
+
+<!--  questp è per dire a spring dove trovare i messaggi personalizzati di errore -->
+<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	<property name="basename" value="/WEB-INF/resource/messages"/>
+</bean>
 
 
 </beans>   

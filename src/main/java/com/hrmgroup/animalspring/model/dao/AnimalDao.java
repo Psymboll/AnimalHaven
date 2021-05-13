@@ -14,6 +14,6 @@ public interface AnimalDao
 	List<Animal> load(String filter) throws SQLException ;
 	
 	void delete(int id) throws SQLException ;
-
+	List<String> loadAllAnimalTypes() throws SQLException;
 	
 }

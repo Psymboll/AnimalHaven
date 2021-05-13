@@ -11,108 +11,142 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-4"></div>
-		<div class="col-4" style="padding: 50px 0px 50px 0px"> <h1>${profileOwner.username}</h1> </div>
-		<div class="col-4"></div>
+		<div class="col-3"></div>
+		<div class="col-6" style="padding: 50px 0px 50px 0px"> <h1>${profileOwner.username}</h1> </div>
+		<div class="col-3"></div>
 	</div>
-</div>
-<div class = "row"> 
-	<div class="col-2"></div>
-	<div class="col-4">
-	<div class="animalTitle" style="padding: 25px 25px 25px 0px"> <h2>${profileOwner.username}'s Animals</h2>  </div>
 
-	<c:forEach items="${ownedAnimals}" var ="animal">
-		<div class= animalList style="padding: 5px 0px 5px 0px">
-		<div class="animalName"><h5> Name: </h5>  </div>
-				
-				${animal.animalname }
-				
-		<div class="animalName"><h5> Age: </h5>  </div>
-				${animal.animalage }
-				
-		<div class="animalName"><h5> Type: </h5>  </div>			
-				${animal.animaltype}
-				
-		</div> 
-	</c:forEach>
-	</div>
-	
-	<div class="col-4">
-	<c:if test="${user.loggeduser.getId() == profileOwner.getId()}">
-		<div class="insertAnimalTitle" style="padding: 25px 25px 25px 0px"> <h2>Save a new Animal</h2>  </div>
-	</c:if>
-	<c:if test="${user.loggeduser.getId() == profileOwner.getId()}">
-		<form:form action = "savenewanimal" method="post" modelAttribute="newanimal" >
+	<div class = "row"> 
 		
-		<div  style ="padding-bottom: 5px"  >Name of your animal</div>
-		<form:input
-		class="newanimalform"
-		id="insertname"
-		path="animalname"
-		type = "text"
-		/>
+		<!--  never use table again!!! it doesn't center easily with other elements -->
+		<div class="col-3">
 		
-		<div  style ="padding-bottom: 5px" >Age of your animal</div>
-		<form:input
-		class="newanimalform" 
-		id="insertage"
-		path = "animalage"
-		type = "number"
-		/>
-		
-		
-	
-		
-			<div id="selecttype" style ="padding-bottom: 5px" class="newanimalform" >Type of your animal  </div>
-			<form:select path="animaltype" id="selectanimal" class="newanimalform">
-			  <option value="">Select a type of animal</option>
-			  <option value="Cat">Cat</option>
-			  <option value="Dog">Dog</option>
-			  <option value="Rabbit">Rabbit</option>
-			  <option value="Hamster">Hamster</option>
-			  <option value="Turtle">Turtle</option>
-			  <option value="Snake">Snake</option>
-		     </form:select>
+		<div class="animalTitle" style="text-align:center"> <h3>${profileOwner.username}'s Animals</h3>  </div>
 			
-			<!--  ci sarà sicuramente un modo migliore di fare questo -->
-			<form:hidden
+				<table class="table" >
+					<thead>
+						<tr>
+							<th scope="row">Name:</th>
+							<th scope="row"> Age:</th>
+							<th scope="row"> Type:</th>
+						
+						</tr>
+					<thead>
+				<tbody>
+					<c:forEach items="${ownedAnimals}" var ="animal">
+						<tr>
+							<td class="animalName"> ${animal.animalname } </td>				
+							<td class="animalName">	${animal.animalage } </td>		
+							<td class="animalName">${animal.animaltype} </td>			
+						<tr>	 
+					</c:forEach>
+				</tbody>
+				</table>
 			
-			path = "owner.username"
-			value = "${user.loggeduser.username}"/>
-			<form:hidden
-			
-			path = "owner.email"
-			value = "${user.loggeduser.email}"/>
-			<form:hidden
-			
-			path = "owner.password"
-			value = "${user.loggeduser.password}"/>
-			<form:hidden
-			
-			path = "owner.id"
-			value = "${user.loggeduser.id}"/>
-			<div style = "padding-top:10 px">
-				<button type="submit" class="btn btn-warning"  class="newanimalform" disabled value="send" id="newanimalbutton" >
-					Send
-				</button>
-			</div>
-			</form:form>
-			
-		
-		
-
-	
-		</c:if>
 		</div>
 		
+		<!--  questa parte è da cambiare con legend -->
 		
-		<div class="col-2"></div>
+		<div class="col-9">
+			<fieldset>
+				<c:if test="${user.loggeduser.getId() == profileOwner.getId()}">
+					<legend class="insertAnimalTitle" > Save a new Animal  </legend>
+					
+					
+					<fieldset>
+					
+						<form:form action = "savenewanimal" method="post" modelAttribute="newanimal" >
+						<div class="row g-3 align-items-center">
+							<div class="col-4">
+								<label for="insertname" class="col-form-label">Name of your animal</label>
+							</div>	
+							<div class="col-4">
+								<form:input class="newanimalform form-control" id="insertname" path="animalname" type = "text"/>
+							</div>	
+							<div class="col-4">
+								<span class="form-text">
+									<form:errors path="animalname"  style="color:DarkRed"/>
+								</span>
+							</div>
+						</div>
+						<div class="row align-items-center g-3 ">
+							<div class="col-4">
+								<label for="insertage" class="col-form-label"  >Age of your animal</label>
+							</div>	
+							<div class="col-4">	
+								<form:input class="newanimalform form-control" id="insertage" path = "animalage" type = "number"/>
+							</div>
+							<div class="col-4">
+								<span class="form-text">	
+									<form:errors path="animalage" style="color:DarkRed"/>
+								</span>		
+							</div>	
+						</div>
+					
+						<div class="row g-3 align-items-center">
+							<div class="col-4">
+								<label for="selectanimal"class="newanimalform col-form-label" >Type of your animal  </label>
+							</div>	
+							<div class="col-4">	
+							<!--  form-select from bootstrap doesn't style this for some reason -->
+								<form:select path="animaltype" id="selectanimal" class="newanimalform form-select " items="${animalTypes }">
+							
+							  	<option selected>Select a type of animal</option>
+							  
+						     </form:select>
+						    </div>
+						    <div class="col-4">	
+						    	<span class="form-text">	 
+						     		<form:errors path="animaltype" style="color:DarkRed"/>
+						     	</span>			
+						    </div>	 
+						</div>	
+							<!--  ci sarà sicuramente un modo migliore di fare questo -->
+							<form:hidden
+							
+							path = "owner.username"
+							value = "${user.loggeduser.username}"/>
+							<form:hidden
+							
+							path = "owner.email"
+							value = "${user.loggeduser.email}"/>
+							<form:hidden
+							
+							path = "owner.password"
+							value = "${user.loggeduser.password}"/>
+							<form:hidden
+							
+							path = "owner.id"
+							value = "${user.loggeduser.id}"/>
+							<div style = "padding-top:10 px">
+								<button type="submit" class="btn btn-warning"  class="newanimalform"  value="send" id="newanimalbutton" >
+									Send
+								</button>
+							</div>
+							<form:errors path="owner.id"/>
+							</form:form>
+							</fieldset>
+						
+						
+				
+					
+					
+					
+					</c:if>
+				</fieldset>
+				
+			</div>
+			
+			
+			
+		
 	
-
+	</div>
 </div>
 
 
 <script>
+/*
 	$(document).ready(function()
 	{
 		
@@ -128,7 +162,7 @@
 			
 		});
 	})
-
+*/
 
 </script>
 

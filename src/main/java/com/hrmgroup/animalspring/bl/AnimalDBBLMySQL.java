@@ -99,4 +99,11 @@ public class AnimalDBBLMySQL implements AnimalDBBL
 		return ownerDao.read(id);
 	}
 
+	@Override
+	public List<String> getAllAnimalTypes() throws SQLException 
+	{
+		
+		return animalDao.loadAllAnimalTypes();
+	}
+
 }

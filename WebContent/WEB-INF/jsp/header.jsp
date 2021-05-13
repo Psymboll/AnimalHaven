@@ -36,7 +36,7 @@
 		   </c:if> 
 		
 		<c:if test='${!user.isGuest() }'>
-			<a href="http://localhost:8080/AnimalSpring/profile"><c:out value = "${user.loggeduser.username}"/>
+			<a href="http://localhost:8080/AnimalSpring/profile/${user.loggeduser.id }"><c:out value = "${user.loggeduser.username}"/>
 			</a>
 			<a href="http://localhost:8080/AnimalSpring/logout">Logout</a>
 		</c:if>
